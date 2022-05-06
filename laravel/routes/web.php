@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $tenant1 = App\Models\Tenant::create(['id' => 'naram']);
+    $tenant1->domains()->create(['domain' => 'naram.localhost']);
 });
